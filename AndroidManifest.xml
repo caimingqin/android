@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="cmq.android"
     android:versionCode="1"
@@ -12,17 +13,30 @@
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
-        <activity android:name=".activity.MainActivity" android:label="androidClient">
-            <intent-filter >
-                <action android:name="android.intent.action.MAIN"/>
-                <category android:name="android.intent.category.LAUNCHER"/>
+        <activity
+            android:name="cmq.android.activity.MainActivity"
+            android:label="androidClient" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <service android:name=".service.DepartmentService">
-            <intent-filter >
-                <action android:name="getDepartment"/>
-            </intent-filter>
-        </service>
+        <activity 
+            android:name="cmq.android.activity.UserActivity"
+            android:label="@string/app_name"
+            android:launchMode="singleTop"
+            android:theme="@style/AppTheme"
+            />
+
+        <service
+            android:name="cmq.android.service.DepartmentService"
+            android:process=":remote" />
+
+        <activity
+            android:name="cmq.android.UserActivity"
+            android:label="@string/title_activity_user" >
+        </activity>
     </application>
 
 </manifest>
